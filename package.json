@@ -1,0 +1,25 @@
+{
+  "name": "unit_test_byjest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "math.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lonelygoogle/unit_test_byJest.git"
+  },
+  "author": "huang_siqin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lonelygoogle/unit_test_byJest/issues"
+  },
+  "homepage": "https://github.com/lonelygoogle/unit_test_byJest#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "jest": "^24.8.0"
+  }
+}
