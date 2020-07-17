@@ -1,13 +1,15 @@
-import axios from 'axios'
-
-export const runCallback = (callback) => {
-    callback('hsq')
+export const generateConfig = () => {
+    return {
+        server: 'http://localhost',
+        port: 8080,
+        time: new Date()
+    }
 }
 
-export const creatObject = (classItem) => {
-    new classItem()
-}
-
-export const getData = () => {
-    return axios.get('./api').then(res => res.data)
+export const generateAnotherConfig = () => {
+    return {
+        server: 'http://localhost',
+        port: 8080,
+        time: new Date()
+    }
 }

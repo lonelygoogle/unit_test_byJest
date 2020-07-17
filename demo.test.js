@@ -1,28 +1,34 @@
-import { runCallback, creatObject, getData } from './demo'
-import axios from 'axios'
-jest.mock('axios')
+import { generateConfig, generateAnotherConfig } from "./demo";
 
-test('测试 runCallback', () => {
-    const func = jest.fn() // mock函数，捕获函数的调用
-    func.mockReturnValue('Dell')
-    runCallback(func)
-    runCallback(func)
-    runCallback(func)
-    expect((func.mock.calls.length)).toBe(3)
-    console.log(func.mock)
-    // expect(runCallback(func)).toBe('hello')
-})
+// test('测试generateConfig', () => {
+//     expect(generateConfig()).toMatchSnapshot({
+//         time: expect.any(Date)
+//     })
+// })
 
-test('测试 creatObject', () => {
-    const func = jest.fn()
-    creatObject(func)
-    console.log(func.mock)
-})
+// test('测试generateAnotherConfig', () => {
+//     expect(generateAnotherConfig()).toMatchSnapshot({
+//         time: expect.any(Date)
+//     })
+// })
 
-test.only('测试 getData', async () => {
-    axios.get.mockResolvedValue({data: 'hello'})
-    await getData().then((data) => {
-        console.log(data)
-        expect(data).toBe('hello')
-    })
-})
+test("测试generateAnotherConfig", () => {
+  expect(generateAnotherConfig()).toMatchInlineSnapshot(
+    {
+      time: expect.any(Date)
+    },
+    `
+    Object {
+      "port": 8080,
+      "server": "http://localhost",
+      "time": Any<Date>,
+    }
+  `
+  );
+});
+
+// test('测试generateConfig', () => {
+//     expect(generateConfig()).toMatchSnapshot({
+//         time: expect.any(Date)
+//     })
+// })
