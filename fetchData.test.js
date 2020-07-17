@@ -19,10 +19,25 @@ import { fetchData } from './fetchData'
 //     })
 // })
 
-test('fecthData 返回结果 404', () => {
-    expect.assertions(1)
-    return fetchData().catch((e) => {
-        console.log('错误信息', e.toString())
-        expect(e.toString().indexOf('404')> -1).toBe(true)
+// test('fecthData 返回结果 404', () => {
+//     expect.assertions(1)
+//     return fetchData().catch((e) => {
+//         console.log('错误信息', e.toString())
+//         expect(e.toString().indexOf('404')> -1).toBe(true)
+//     })
+// })
+
+// test('fecthData 返回结果 {success: true}', () => {
+//     return expect(fetchData()).resolves.toMatchObject({
+//         data: {
+//             success: true
+//         }
+//     })
+// })
+
+test('fecthData 返回结果 {success: true}', async () => {
+    const res = await fetchData()
+    expect(res.data).toEqual({
+        success: true
     })
 })
